@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public boolean validNum(){
         String input = edt1.getText().toString();
         int counter=0;

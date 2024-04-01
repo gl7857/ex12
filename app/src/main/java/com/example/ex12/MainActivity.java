@@ -113,10 +113,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clicked6(View view) {
-        num1 = Double.parseDouble(edt1.getText().toString());
-        result();
-        edt1.setText(String.valueOf(calculation));
-        mark="=";
+        if (!edt1.getText().toString().isEmpty()) {
+            num1 = Double.parseDouble(edt1.getText().toString());
+            result();
+            edt1.setText(String.valueOf(calculation));
+            mark = "=";
+        } else {
+            mark = "+";
+        }
     }
 
 

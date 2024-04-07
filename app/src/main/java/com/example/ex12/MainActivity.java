@@ -61,10 +61,6 @@ public class MainActivity extends AppCompatActivity {
             num1=0;
             math_sign="+";
         }
-
-
-
-
     }
 
     public boolean ValidNum(){
@@ -104,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         }
         math_sign="+";
     }
-
 
     public void clicked2(View view) {
         if (!edt1.getText().toString().isEmpty()){

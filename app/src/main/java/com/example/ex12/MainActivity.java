@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText edt1;
     double num1 = 0, result = 0;
-    String mark = "+";
+    String math_sign = "+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,34 +32,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void result() {
         if (ValidNum()){
-            if (mark!="=") {
+            if (math_sign!="=") {
                 num1 = Double.parseDouble(edt1.getText().toString());
             }else{
                 num1=0;
             }
-            if (mark=="+"){
+            if (math_sign=="+"){
                 result=result+num1;
             }
-            if (mark=="-"){
+            if (math_sign=="-"){
                 result=result-num1;
             }
-            if (mark=="*"){
+            if (math_sign=="*"){
                 result=result*num1;
             }
-            if (mark=="/" ){
+            if (math_sign=="/" ){
                 if (num1!=0){
                     result=result/num1;
                 }else{
                     Toast.makeText(this, "wrong input", Toast.LENGTH_SHORT).show();
                     result=0;
-                    mark="+";
+                    math_sign="+";
                 }
             }
         }else{
             Toast.makeText(this, "wrong input", Toast.LENGTH_SHORT).show();
             result=0;
             num1=0;
-            mark="+";
+            math_sign="+";
         }
 
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             result();
             edt1.setText("");
         }
-        mark="+";
+        math_sign="+";
     }
 
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             result();
             edt1.setText("");
         }
-        mark="-";
+        math_sign="-";
     }
 
     public void clicked3(View view) {
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             result();
             edt1.setText("");
         }
-        mark="*";
+        math_sign="*";
     }
 
     public void clicked4(View view) {
@@ -127,13 +127,13 @@ public class MainActivity extends AppCompatActivity {
             result();
             edt1.setText("");
         }
-        mark="/";
+        math_sign="/";
     }
 
     public void clicked5(View view) {
         result = 0;
         num1 = 0;
-        mark = "+";
+        math_sign = "+";
         edt1.setText("");
     }
 
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             result();
         }
         edt1.setText(String.valueOf(result));
-        mark = "=";
+        math_sign = "=";
     }
 
     public void clicked7(View view) {

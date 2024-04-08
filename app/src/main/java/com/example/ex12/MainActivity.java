@@ -53,34 +53,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean ValidNum(){
+    public boolean ValidNum() {
         String input = edt1.getText().toString();
-        int counter=0;
-        if (!input.isEmpty()) {
-            if ((input.charAt(0) == '-' && input.length()>1) || (input.charAt(0) <= '9' && input.charAt(0) >= '0') || (input.charAt(0) == '.')) {
-                if (input.charAt(0) == '.') {
-                    counter++;
-                }
-                for (int i = 1; i < input.length(); i++) {
-                    if (input.charAt(i) > '9' || input.charAt(i) < '0') {
-                        if (input.charAt(i) == '.') {
-                            counter++;
-                        }else{
-                            return false;
-                        }
-                    }
-
-                    if (counter > 1) {
-                        return false;
-                    }
-                }
-            } else {
-                return false;
-            }
-        }else{
-            return false;
-        }
-        return true;
+        return !(input.equals("") ||
+                input.equals("-") ||
+                input.equals(".") ||
+                input.equals("+") ||
+                input.equals("-."));
     }
 
     public void clicked1(View view) {
